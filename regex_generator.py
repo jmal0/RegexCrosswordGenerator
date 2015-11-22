@@ -198,6 +198,6 @@ if __name__ == "__main__":
     #     cols=[re.compile("[^SPEAK]+"), re.compile("EP|IP|EF")]
     # )
     x = RegexGenerator()
-    print(map(lambda x: x.pattern, x.rows))
-    print(map(lambda x: x.pattern, x.cols))
-    print(x.solution or "No solution")
+    print("Rows", map(lambda x: x.pattern, x.rows))
+    print("Cols", map(lambda x: x.pattern, x.cols))
+    print("Solution", x.solution or "No solution")
