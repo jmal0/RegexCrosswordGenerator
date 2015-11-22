@@ -16,17 +16,16 @@ class RegexGenerator(object):
 
     N:
     - whole_word_pattern
+
+    Patterns:
+    "{}{}|{}{}|{}+"
+    "[{}{}{}{}{}{}]+"
+    "[^{}{}{}{}{}]+"
+    "{}{}|{}{}|{}{}"
     """
     ALLOWED_CHARACTERS = ("abcdefghijklmnopqrstuvwxyz" +
                           "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
                           "1234567890")
-
-    PATTERNS = [
-        "{}{}|{}{}|{}+",
-        "[{}{}{}{}{}{}]+",
-        "[^{}{}{}{}{}]+",
-        "{}{}|{}{}|{}{}"
-    ]
 
     def __init__(self, width=2, height=2):
         self._rows = [self._regex_from_pattern(width) for i in xrange(height)]
