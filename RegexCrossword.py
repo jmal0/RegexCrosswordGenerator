@@ -47,7 +47,7 @@ class RegexCrossword:
             m = self.cRules[c].match(col)
             if not(m and len(m.group(0)) == self.ySize):
                 return False
-                
+
         return True
     
     def solve_bruteforce(self):
@@ -84,7 +84,6 @@ class RegexCrossword:
     def solve(self):
         self.possibilities = [[CrosswordSquare(self.cRules[c], self.rRules[r]) for c in xrange(self.xSize)] for r in xrange(self.ySize)]
 
-     
     def __str__(self):
         puzzle = ""
         puzzle += "%-10s" % ""
@@ -92,9 +91,9 @@ class RegexCrossword:
             puzzle += "%-10s" % self.cRules[r].pattern
         puzzle += "\n"
 
-        for r in xrange(self.xSize):
+        for r in xrange(self.ySize):
             puzzle += "%-10s" % self.rRules[r].pattern
-            for c in xrange(self.ySize):
+            for c in xrange(self.xSize):
                 puzzle += "%-10s" % self.grid[r][c]
             puzzle += "\n"
         return puzzle
