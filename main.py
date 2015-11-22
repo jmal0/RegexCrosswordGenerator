@@ -11,5 +11,5 @@ if __name__ == '__main__':
     columnRules = [re.compile("[^SPEAK]+"), re.compile("EP|IP|EF")]
     rowRules = [re.compile("HE|LL|O+"), re.compile("[PLEASE]+")]
     puzzle = RegexCrossword(xSize, ySize, columnRules, rowRules)
+    puzzle.solve_bruteforce()
     print(puzzle)
-    print(puzzle.check())
