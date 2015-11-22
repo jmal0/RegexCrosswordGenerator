@@ -6,10 +6,11 @@ import re
 from RegexCrossword import RegexCrossword
 
 if __name__ == '__main__':
-    xSize = 2
+    xSize = 3
     ySize = 2
-    columnRules = [re.compile("[^SPEAK]+"), re.compile("EP|IP|EF")]
-    rowRules = [re.compile("HE|LL|O+"), re.compile("[PLEASE]+")]
+    columnRules = [re.compile("UB|IE|AW"), re.compile("[TUBE]*"), re.compile("[BORF].")]
+    rowRules = [re.compile("[NOTAD]*"), re.compile("WEL|BAL|EAR")]
     puzzle = RegexCrossword(xSize, ySize, columnRules, rowRules)
     print(puzzle)
-    print(puzzle.check())
+    puzzle.solve_bruteforce()
+    print(puzzle)
